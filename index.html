@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Form Validator" />
         <title>Form Validator</title>
-        <script src="https://kit.fontawesome.com/d9d08682e3.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/d9d08682e3.js" crossorigin="anonymous" defer></script>
+        <script src="./src/validation.ts" type="module" defer></script>
     </head>
     <body>
         <main>
@@ -19,28 +20,28 @@
                             <label for="username" aria-label="Username"><i class="fa-solid fa-user"></i></label>
                             <input id="username" type="text" placeholder="Username" />
                         </div>
-                        <span class="error hidden">Error</span>
+                        <span class="error-msg hidden">Error</span>
                     </div>
                     <div class="form-field-container">
                         <div class="form-field">
                             <label for="email" aria-label="Email"><i class="fa-solid fa-envelope"></i></label>
-                            <input id="email" type="email" placeholder="Email" />
+                            <input id="email" type="text" placeholder="Email" />
                         </div>
-                        <span class="error hidden">Error</span>
+                        <span class="error-msg hidden">Error</span>
                     </div>
                     <div class="form-field-container">
                         <div class="form-field">
                             <label for="password" aria-label="Password"><i class="fa-solid fa-lock"></i></label>
                             <input id="password" type="password" placeholder="Password" />
                         </div>
-                        <span class="error hidden">Error</span>
+                        <span class="error-msg hidden">Error</span>
                     </div>
                     <div class="form-field-container">
                         <div class="form-field">
                             <label for="password-confirm" aria-label="Confirm Password"><i class="fa-solid fa-lock"></i></label>
-                            <input id="password-confirm" type="password" placeholder="Confirm Password" />
+                            <input id="password-confirm" type="password" placeholder="Password Confirmation" />
                         </div>
-                        <span class="error hidden">Error</span>
+                        <span class="error-msg hidden">Error</span>
                     </div>
                     <div class="form-field">
                         <input type="checkbox" id="checkbox" />

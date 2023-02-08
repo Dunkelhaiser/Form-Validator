@@ -8,7 +8,7 @@
 
     vertical-align: bottom;
 
-    background: #fff;
+    background-color: #fff;
     border: 1px solid $light-text-light;
     border-radius: 0.2rem;
 }
@@ -22,6 +22,11 @@ input[type="checkbox"]:checked ~ .checkbox::before {
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
+}
+
+.checkbox.error {
+    background-color: $light-red-light;
+    border: 1px solid $light-red;
 }
 
 input[type="checkbox"] {
