@@ -1,3 +1,5 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap";
+
 *,
 *::before,
 *::after {
@@ -9,11 +11,18 @@
 html {
     overflow: overlay;
 
-    font-family: $sans-serif;
+    font-family: Poppins, sans-serif;
     font-size: 62.5%;
     color: $light-text;
 
     background-color: $light-background;
+}
+
+main {
+    @include flex(column, center, center, center, 0, nowrap);
+
+    width: 100vw;
+    min-height: 100vh;
 }
 
 input,

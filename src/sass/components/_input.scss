@@ -1,0 +1,37 @@
+input {
+    accent-color: $light-blue;
+}
+
+input:not([type="checkbox"]) {
+    display: block;
+
+    width: 100%;
+    padding: 0.5rem 3rem;
+
+    font-size: 1.3rem;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $light-text-light;
+    outline: none;
+
+    &:focus {
+        border-bottom: 1px solid $light-text-dark;
+    }
+}
+
+input.success {
+    border-bottom: 2px solid $light-green;
+
+    &:focus {
+        border-bottom: 2px solid $light-green;
+    }
+}
+
+input.error {
+    border-bottom: 2px solid $light-red;
+
+    &:focus {
+        border-bottom: 2px solid $light-red;
+    }
+}
