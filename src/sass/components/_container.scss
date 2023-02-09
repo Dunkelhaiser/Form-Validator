@@ -1,13 +1,17 @@
 .container {
-    @include respond-phone {
+    @include respond-tablet {
         width: 90vw;
         margin: 0;
         padding: 5rem;
     }
 
+    @include respond-pc-large {
+        width: 25vw;
+    }
+
     width: 50vw;
     margin: 0 5rem;
-    padding: 7.5rem;
+    padding: 5rem 7.5rem;
 
     background-color: $light-foreground;
     border-radius: 2rem;
