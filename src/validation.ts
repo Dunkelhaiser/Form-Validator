@@ -46,7 +46,6 @@ const passwordMatch = (password: HTMLInputElement, passwordConfirmation: HTMLInp
         return;
     }
     if (password.value === passwordConfirmation.value) {
-        showSuccess(password);
         showSuccess(passwordConfirmation);
     } else {
         showError(passwordConfirmation, `Passwords must match`);
@@ -65,7 +64,11 @@ const checkEmail = (input: HTMLInputElement) => {
 const checkCheckbox = (input: HTMLInputElement) => {
     if (input.checked) {
         input.parentNode?.querySelector(".checkbox")!.classList.remove("error");
-    } else input.parentNode?.querySelector(".checkbox")!.classList.add("error");
+        input.parentNode?.querySelector(".checkbox")!.classList.add("success");
+    } else {
+        input.parentNode?.querySelector(".checkbox")!.classList.add("error");
+        input.parentNode?.querySelector(".checkbox")!.classList.remove("success");
+    }
 };
 
 const validate = (e: Event) => {
@@ -78,4 +81,32 @@ const validate = (e: Event) => {
     checkCheckbox(checkbox);
 };
 
+const validateSingle = (input: HTMLInputElement) => {
+    checkEmpty([input]);
+};
+
+const validationTimeout = (validations: (() => void)[]) => {
+    setTimeout(() => {
+        validations.forEach((validation) => {
+            validation();
+        });
+        validateSingle(usernameInput);
+        checkLength(usernameInput, 6, 20);
+    }, 1000);
+};
+
 form.addEventListener("submit", validate);
+usernameInput.addEventListener("keydown", () =>
+    validationTimeout([() => validateSingle(usernameInput), () => checkLength(usernameInput, 6, 20)])
+);
+
+emailInput.addEventListener("keydown", () => {
+    validationTimeout([() => validateSingle(emailInput), () => checkEmail(emailInput)]);
+});
+passwordInput.addEventListener("keydown", () => {
+    validationTimeout([() => validateSingle(passwordInput), () => checkLength(passwordInput, 8, 265)]);
+});
+passwordConfirmInput.addEventListener("keydown", () => {
+    validationTimeout([() => passwordMatch(passwordInput, passwordConfirmInput)]);
+});
+checkbox.addEventListener("change", () => checkCheckbox(checkbox));

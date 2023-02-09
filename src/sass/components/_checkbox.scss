@@ -29,6 +29,11 @@ input[type="checkbox"]:checked ~ .checkbox::before {
     border: 1px solid $light-red;
 }
 
+.checkbox.success {
+    background-color: $light-green-light;
+    border: 1px solid $light-green;
+}
+
 input[type="checkbox"] {
     display: none;
 }
