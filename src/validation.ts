@@ -95,7 +95,15 @@ const validationTimeout = (validations: (() => void)[]) => {
     }, 1000);
 };
 
+const showSuccessScreen = () => {
+    if (!form.querySelector(".error")) {
+        form.innerHTML = `<h1>Successfully Registered</h1>
+            <span>Check your email for confirmation letter.</span>`;
+    }
+};
+
 form.addEventListener("submit", validate);
+form.addEventListener("submit", showSuccessScreen);
 usernameInput.addEventListener("keydown", () =>
     validationTimeout([() => validateSingle(usernameInput), () => checkLength(usernameInput, 6, 20)])
 );
