@@ -63,11 +63,11 @@ const checkEmail = (input: HTMLInputElement) => {
 
 const checkCheckbox = (input: HTMLInputElement) => {
     if (input.checked) {
-        input.parentNode?.querySelector(".checkbox")!.classList.remove("error");
-        input.parentNode?.querySelector(".checkbox")!.classList.add("success");
+        input.classList.remove("error");
+        input.classList.add("success");
     } else {
-        input.parentNode?.querySelector(".checkbox")!.classList.add("error");
-        input.parentNode?.querySelector(".checkbox")!.classList.remove("success");
+        input.classList.add("error");
+        input.classList.remove("success");
     }
 };
 

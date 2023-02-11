@@ -1,4 +1,4 @@
-.checkbox {
+input[type="checkbox"] {
     display: inline-block;
 
     width: 1.3rem;
@@ -8,12 +8,13 @@
 
     vertical-align: bottom;
 
+    appearance: none;
     background-color: #fff;
     border: 1px solid $light-text-light;
     border-radius: 0.2rem;
 }
 
-input[type="checkbox"]:checked ~ .checkbox::before {
+input[type="checkbox"]:checked::after {
     content: "\2713";
 
     display: block;
@@ -24,16 +25,12 @@ input[type="checkbox"]:checked ~ .checkbox::before {
     text-align: center;
 }
 
-.checkbox.error {
+input[type="checkbox"].error {
     background-color: $light-red-light;
     border: 1px solid $light-red;
 }
 
-.checkbox.success {
+input[type="checkbox"].success {
     background-color: $light-green-light;
     border: 1px solid $light-green;
-}
-
-input[type="checkbox"] {
-    display: none;
 }
